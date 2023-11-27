@@ -4,6 +4,8 @@ $parolaCensurata = $_GET["parola"];
 $nuovaFrase = str_replace($parolaCensurata,"***",$frasePresa);
 $lunghezza = strlen($frasePresa);
 $lunghezzaCensura = strlen($nuovaFrase);
+$numeroParole = str_word_count($frasePresa);
+$numeroParolecensura = str_word_count($nuovaFrase);
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +23,14 @@ $lunghezzaCensura = strlen($nuovaFrase);
            <p>
             <h2 class="text-light">La tua frase completa è...</h2>
             <h3><?php echo $frasePresa ?></h3>
-            <p class="text-light">Lunghezza: <?php echo $lunghezza ?></p>
+            <p class="text-light">Lunghezza: <?php echo $lunghezza ?> caratteri</p>
+            <p class="text-light">Lunghezza: <?php echo $numeroParole ?> parole</p>
         </p>
         <p>
             <h2 class="text-light">La nuova frase con la parola "<?php echo $parolaCensurata ?>" censurata è...</h2>
             <h3><?php echo $nuovaFrase ?></h3>
-            <p class="text-light">Lunghezza: <?php echo $lunghezzaCensura ?></p>
+            <p class="text-light">Lunghezza: <?php echo $lunghezzaCensura ?> caratteri</p>
+            <p class="text-light">Lunghezza: <?php echo $numeroParolecensura ?> parole</p>
         </p>  
         </div>
        
